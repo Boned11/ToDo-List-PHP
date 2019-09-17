@@ -1,12 +1,17 @@
 <?php 
 
-	$pdo = new PDO("mysql:host=localhost; dbname=todolist", "todo_admin", "123");
-	$sql = "INSERT INTO tasks(title, content) VALUES (:title, :content)";
-	$statement = $pdo->prepare($sql);
-	$statement->bindParam(":title", $_POST['title']);
-	$statement->bindParam(":content", $_POST['content']);
-	$statement->execute();
 
+	require 'database/QueryBuilder.php';
+
+	$db = new QueryBuilder;
+	$data = [
+		"title"		=> $_POST['title'],
+		"content"	=> $_POST['content']
+	];
+
+	$db->store("tasks", $data);
+
+	
 	header("Location: /"); exit;
 
 ?> 

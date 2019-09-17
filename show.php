@@ -1,14 +1,10 @@
 <?php 
 
-	$pdo = new PDO("mysql:host=localhost; dbname=todolist", "todo_admin", "123");
-	$sql = "SELECT * FROM tasks WHERE id=:id";
-	$statement = $pdo->prepare($sql);
-	$statement->bindParam(":id", $_GET['id']);
-	$statement->execute();
-	$task = $statement->fetch(2);
 
+	require 'database/QueryBuilder.php';
 
-
+	$db = new QueryBuilder;
+	$task = $db->showOne("tasks", $_GET['id']);
 ?>
 
 <!DOCTYPE html>

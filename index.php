@@ -1,9 +1,10 @@
 <?php 
 
-	$pdo = new PDO("mysql:host=localhost; dbname=todolist", "todo_admin", "123");
-	$statement = $pdo->prepare("SELECT * FROM tasks");
-	$statement->execute();
-	$tasks = $statement->fetchAll(PDO::FETCH_ASSOC);
+	require 'database/QueryBuilder.php';
+
+	$db = new QueryBuilder;
+	$tasks = $db->all("tasks");
+
 ?>
 
 <!DOCTYPE html>
