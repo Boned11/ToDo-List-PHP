@@ -1,10 +1,6 @@
-<?php 
+<?php
 
-
-	require 'database/QueryBuilder.php';
-
-	$db = new QueryBuilder;
-	$task = $db->showOne("tasks", $_GET['id']);
+	$task = $db->showOne("tasks", $id);
 ?>
 
 <!DOCTYPE html>

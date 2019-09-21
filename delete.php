@@ -1,9 +1,7 @@
 <?php 
 
-	require 'database/QueryBuilder.php';
 
-	$db = new QueryBuilder;
-	$db->delete("tasks", $_GET['id']);
+	$db->delete("tasks", $id);
 
 	
 	header("Location: /");

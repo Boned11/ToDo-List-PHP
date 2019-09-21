@@ -10,7 +10,7 @@
 		<div class="row">
 			<div class="col-xl-12">
 				<h1>Create Task</h1>
-				<form action="store.php" method="post">
+				<form action="/store" method="post">
 					<div class="form-group">
 						<input type="text" class="form-control" name="title">
 					</div>

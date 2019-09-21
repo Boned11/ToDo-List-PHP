@@ -1,10 +1,6 @@
 <?php 
 
-	require 'database/QueryBuilder.php';
-
-	$db = new QueryBuilder;
-	$task = $db->getOne("tasks", $_GET['id']);
-
+	$task = $db->getOne("tasks", $id);
 ?>
 
 
@@ -20,7 +16,7 @@
 		<div class="row">
 			<div class="col-xl-12">
 				<h1>Edit Task</h1>
-				<form action="update.php?id=<?= $task['id'];?>" method="post">
+				<form action="update/<?= $task['id'];?>" method="post">
 					<div class="form-group">
 						<input type="text" name="title" class="form-control" value="<?= $task['title'];?>">
 					</div>

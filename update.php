@@ -1,13 +1,11 @@
 <?php 
-	require 'database/QueryBuilder.php';
 
 	$data = [
-		"id" 		=> $_GET['id'],
+		"id" 		=> $id,
 		"title" 	=> $_POST['title'],
 		"content"	=> $_POST['content']
 	];
 
-	$db = new QueryBuilder;
 	$db->update("tasks", $data);
 
 	header("Location: /");
